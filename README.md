@@ -115,6 +115,18 @@ commentSchema {
     timestamps: true
 }
 
+# Routes Table 
+| name | url | verb | description | 
+| ---- | ---- | ---- | ----| 
+| Sign up | /signup | POST | create new user |
+| Log in | /login | POST | user log in |
+| Update | /update/:id | PUT | change user PW |
+| New | /new | GET | shows create page for a new band |
+| Create | / | POST | Creates a new band |
+| Edit | /:id/edit | GET | Edits band information |
+| Show | /:id | GET | Show page for band |
+| log out | /logout | DELETE | Logs user out |
+
 # Wire Frames & ERD
 
 <img src='images/README-imgs/WireFrames.jpeg'>
