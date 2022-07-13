@@ -120,7 +120,7 @@ commentSchema {
 | ---- | ---- | ---- | ----| 
 | Sign up | /signup | POST | create new user |
 | Log in | /login | POST | user log in |
-| Update | /update/:id | PUT | change user PW |
+| Update | /update/:id | PUT | updates band info |
 | New | /new | GET | shows create page for a new band |
 | Create | / | POST | Creates a new band |
 | Edit | /:id/edit | GET | Edits band information |
