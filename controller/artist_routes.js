@@ -3,8 +3,8 @@ const router = express.Router()
 
 // INDEX 
 router.get('/', (req,res)=>{
-    console.log('Page working')
-    res.render('bands/index')
+    console.log('Page working ')
+    res.render('index')
 })
 
 module.exports = router
