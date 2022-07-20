@@ -4,7 +4,7 @@ const router = express.Router()
 // INDEX 
 router.get('/', (req,res)=>{
     console.log('Page working ')
-    res.render('index')
+    res.render('artists/show')
 })
 
 module.exports = router

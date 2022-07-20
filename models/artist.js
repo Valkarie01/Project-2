@@ -8,8 +8,8 @@ const artistSchema = new Schema({
     genre: [ String ],
     fave: {
         type: Boolean,
-        ref: 'User'
-
+        ref: 'User',
+        default: false
     }
 }, {
     timestamps: true
