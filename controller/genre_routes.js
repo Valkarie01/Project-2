@@ -1,12 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const Artist = require('../models/artist')
+// const Artist = require('../models/artist')
+const Genre = require('../models/genre')
 
 // INDEX 
 router.get('/', (req, res) => {
-    Artist.find({})
-        .then(artist => {
-            res.render('artists/index', artist)
+    Genre.find({})
+        .then(genre => {
+            res.render('artists/index', genre)
         })
         .catch(err => {
             res.json(err)

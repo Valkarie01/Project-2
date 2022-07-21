@@ -4,16 +4,15 @@
 <div>
     <h2 class="display-6">Welcome! Great to see you!</h2>
     <div class="row">
-            <div class="card" style="width: 18rem">
-                <h5 class="card-header">{{genre.name}}</h5>
-                <div class="card-body">
+            <div class="card" style="width: 20rem">
+                <h5 class="card-header">{{artist.name}}</h5>
+            
                     <p class="card-text">
-                        {{genre."name": ""}}
+                        {{artist.name}}
                     </p>
-                    <a href="/fruits/{{artist._id}}}}" class="btn btn-info">View {{artist.name}}</a>
+                    <a href="/artist/{{artist._id}}" class="btn btn-info">View {{artist.name}}</a>
                 </div>
             </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

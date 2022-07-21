@@ -9,9 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/styles.css">
-    <title>Music App</title>
+    <title>Music Finder App</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="/genre" class="navbar-brand">Music Finder App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <a href="/users/signup" class="nav-link text-light">Sign Up</a>
+                <a href="/users/login" class="nav-link text-light">Log In</a>
+                <a href="/users/logout" class="nav-link text-light">Log Out</a>
+            </div>
+        </div>
+    </nav>
     <main>
         {% block content %}
         My content

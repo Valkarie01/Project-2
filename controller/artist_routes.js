@@ -6,7 +6,7 @@ const Artist = require('../models/artist')
 router.get('/:id', (req, res) => {
     Artist.find({})
         .then(artists => {
-            res.render('show', { artists })
+            res.render('artists/show', artists)
         })
         .catch(err => {
             res.json(err)
