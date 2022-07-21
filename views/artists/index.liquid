@@ -4,23 +4,13 @@
 <div>
     <h2 class="display-6">Welcome! Great to see you!</h2>
     <div class="row">
-
-        {% for artist in artists %}
             <div class="card" style="width: 18rem">
-                <h5 class="card-header">{{artist.name}}</h5>
+                <h5 class="card-header">{{genre.name}}</h5>
                 <div class="card-body">
-                    <!-- <h6 class="card-title">
-                        {% if  %}
-                            Ripe
-                        {% else %}
-                            Not Ripe
-                        {% endif %}
-                    </h6> -->
                     <p class="card-text">
-                        The genre of {{artist.name}} is {{artist.genre}}
+                        {{genre."name": ""}}
                     </p>
-                    
-                    <a href="/fruits/{{artist._id}}}}" class="btn btn-info">View {{fruit.name}}</a>
+                    <a href="/fruits/{{artist._id}}}}" class="btn btn-info">View {{artist.name}}</a>
                 </div>
             </div>
         {% endfor %}

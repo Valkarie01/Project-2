@@ -1,6 +1,7 @@
 const mongoose = require('./connection')
 const Artist = require('./artist')
-const Genre = require('./Genre')
+const Genre = require('./genre')
+const db = mongoose.connection
 
 db.on('open', () => {
     const startArtists = [
@@ -21,6 +22,21 @@ db.on('open', () => {
         { name: 'Flo Rida', albums: 15, genre: ['Hip Hop', 'Rap', 'Pop Music','Electronic'], fave: undefined }
     ]
 
+    Artist.remove({})
+        .then(deletedArtists => {
+            console.log('deleted artists', deletedArtists)
+            Artist.create(startArtists)
+                .then(data => {
+                    console.log('the new artists', data)
+                    db.close()
+                })
+                .catch(err => {
+                    console.log('error:', err)
+                    db.close()
+                })
+        })
+})
+db.on('open', () => {
     const startGenres = [
         { genre: 'Alterative Rock' },
         { genre: 'Reggae Rock' },
@@ -37,17 +53,19 @@ db.on('open', () => {
         { genre: 'Soul' }
     ]
 
-    Artist.remove({})
-    .then()
-    .then()
-    .catch(err => {
-        console.log('error:', err)
-        db.close()
-    })
-
     Genre.remove({})
-    .then()
-    .then()
+        .then(deletedGenres => {
+            console.log(deletedGenres)
+        Genre.create(startGenres)
+            .then(data => {
+                console.log('New genre', data)
+                db.close()
+            })
+            .catch(err => {
+            console.log('error:', err)
+            db.close()
+        })
+    })
     .catch(err => {
         console.log('error:', err)
         db.close()
