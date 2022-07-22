@@ -2,17 +2,15 @@
 
 {% block content %}
 <div>
-    <h2 class="display-6">Welcome! Great to see you!</h2>
+    <h2 class="display-6">Welcome!</h2>
     <div class="row">
-            <div class="card" style="width: 20rem">
-                <h5 class="card-header">{{artist.name}}</h5>
-            
-                    <p class="card-text">
-                        {{artist.name}}
-                    </p>
-                    <a href="/artist/{{artist._id}}" class="btn btn-info">View {{artist.name}}</a>
-                </div>
-            </div>
-    </div>
+        <a href="/artist/new" class="btn btn-dark" style="width: 10rem;">Create New Artist</a>
+        {% for artist in artists %}
+        <ul>
+            <li>{{artists.name}}</li>
+        </ul>
+            <a href="/artist/{{artist._id}}" class="btn btn-info">View {{artist.name}}</a>
+        {% endfor %}
+        </div>
 </div>
 {% endblock %}

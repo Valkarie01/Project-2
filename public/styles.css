@@ -1,7 +1,7 @@
 body {
-background-color: lavender;
+    background: rgb(196, 196, 245);
 }
 
-.btn {
-    color: blueviolet;
+a {
+    margin: 5px;
 }

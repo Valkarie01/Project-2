@@ -1,6 +1,5 @@
 const mongoose = require('./connection')
 const Artist = require('./artist')
-const Genre = require('./genre')
 const db = mongoose.connection
 
 db.on('open', () => {
@@ -21,26 +20,10 @@ db.on('open', () => {
         { name: 'Juice WRLD', albums: 7, genre: ['Hip Hop', 'Rap'], fave: undefined },
         { name: 'Flo Rida', albums: 15, genre: ['Hip Hop', 'Rap', 'Pop Music','Electronic'], fave: undefined }
     ]
-        const startGenres = [
-            { genre: 'Alterative Rock' },
-            { genre: 'Reggae Rock' },
-            { genre: 'Ska Punk' },
-            { genre: 'Rock' },
-            { genre: 'Pop Music' },
-            { genre: 'Hip Hop' },
-            { genre: 'Rhythm and Blues' },
-            { genre: 'Electronic' },
-            { genre: 'Latin' },
-            { genre: 'Rap' },
-            { genre: 'R&B' },
-            { genre: 'Metal' },
-            { genre: 'Soul' }
-        ]
-
+    
     Artist.remove({})
         .then(deleted => {
             console.log('deleted ', deleted)
-            Genre.create(startGenres)
             Artist.create(startArtists)
                 .then(data => {
                     console.log('the new artists', data)

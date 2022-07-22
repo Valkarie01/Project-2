@@ -1,5 +1,43 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
-<h1>hello</h1>
+<div class="container-md">
+    <form action="/artist" method="POST">
+        <fieldset>
+            <legend>Create A New Artist</legend>
+            <label class="form-label">Name:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="name" 
+                placeholder="Enter Name"
+            >
+            <label class="form-label">Albums:</label>
+            <input 
+                class="form-control" 
+                type="number" 
+                name="albums" 
+                placeholder="Enter Albums Amount"
+            >
+            <label class="form-label">Genre:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="genre" 
+                placeholder="Enter Artist Genre"
+            >
+            <label class="form-label">Favorite?</label>
+            <input 
+                class="form-check-input" 
+                type="checkbox" 
+                name="fave"
+            >
+        </fieldset>
+        <input 
+            type="submit" 
+            value="Create New Artist" 
+            class="btn btn-success"
+        >
+    </form>
+</div>
 {% endblock %}
