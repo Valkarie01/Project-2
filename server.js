@@ -32,7 +32,7 @@ app.use(
 
 app.use('/artist', artistRoutes)
 app.use('/users', userRoutes)
-app.use('/genre', genreRoutes)
+app.use('/', genreRoutes)
 
 // ======= PORT ========
 const PORT = process.env.PORT
