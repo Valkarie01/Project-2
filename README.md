@@ -2,6 +2,11 @@
 
 As someone who loves music, it seems hard to find good music. So I wanted to make something that everyone can contribute into and find new music and add music that they enjoy so that others can enjoy too. 
 
+## Install Instructions
+
+In order to use, you must 
+- npm install bcryptjs connect-mongo dotenv express express-session liquid-express-views method-override mongoose morgan
+
 ## Seed used: 
 
 startingBands = {
