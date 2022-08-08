@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     Artist.create(req.body)
         .then(artist => {
             console.log(artist)
-            res.redirect('/genre')
+            res.redirect('/')
         })
         .catch(err => {
             res.json(err)

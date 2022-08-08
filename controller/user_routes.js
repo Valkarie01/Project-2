@@ -41,7 +41,7 @@ router.post('/login', async (req, res) => {
                     req.session.username = username
                     req.session.loggedIn = true
                     req.session.userId = user._id
-                    res.redirect('/genre')
+                    res.redirect('/')
                 } else {
                     res.json({ error: 'username or password incorrect' })
                 }
@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
 // logout route
 router.get('/logout', (req, res) => {
     req.session.destroy(ret => {
-        res.redirect('/genre')
+        res.redirect('/')
     })
 })
 
