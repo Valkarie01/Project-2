@@ -6,8 +6,9 @@ const Genre = require('../models/genre')
 // INDEX 
 router.get('/', (req, res) => {
     Genre.find({})
-        .then(genre => {
-            res.render('artists/index', genre)
+        .then(genres => {
+            console.log(genres)
+            res.render('genres/index', {genres})
         })
         .catch(err => {
             res.json(err)

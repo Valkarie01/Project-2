@@ -1,0 +1,16 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div>
+    <h2 class="display-6">Welcome!</h2>
+    <div class="row">
+        <a href="/genre/new" class="btn btn-dark" style="width: 10rem;">Create New Genre</a>
+        {% for genre in genres %}
+        <ul>
+            <li>{{genre.genre}}</li>
+        </ul>
+            <a href="/genre/{{genre._id}}" class="btn btn-info">View {{genre.genre}}</a>
+        {% endfor %}
+        </div>
+</div>
+{% endblock %}

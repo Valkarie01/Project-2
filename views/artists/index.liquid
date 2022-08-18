@@ -5,9 +5,9 @@
     <h2 class="display-6">Welcome!</h2>
     <div class="row">
         <a href="/artist/new" class="btn btn-dark" style="width: 10rem;">Create New Artist</a>
-        {% for artists in artists %}
+        {% for artist in artists %}
         <ul>
-            <li>{{artists.name}}</li>
+            <li>{{artist.name}}</li>
         </ul>
             <a href="/artist/{{artist._id}}" class="btn btn-info">View {{artist.name}}</a>
         {% endfor %}
