@@ -16,8 +16,32 @@ router.delete('/:id', (req, res) => {
         })
     })
 
+router.get('/:id/edit', (req, res) => {
+    const genreId = req.params.id
 
-    
+    Genre.findById(genreId)
+        .then(genre => {
+            res.render('genres/edit', { genre })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+// PUT - Update
+router.put('/:id', (req, res) => {
+    const genreId = req.params.id
+
+    Genre.findByIdAndUpdate(genreId, req.body, { new: true })
+        .then(genre => {
+            res.redirect(`/${ genre._id }`)
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+
 // INDEX 
 router.get('/', (req, res) => {
     Genre.find({})
@@ -41,10 +65,10 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     req.body.owner = req.session.userId
 
-    Fruit.create(req.body)
-        .then(fruit => {
-            console.log(fruit)
-            res.redirect('/genre')
+    Genre.create(req.body)
+        .then(genre => {
+            console.log(genre)
+            res.redirect('/')
         })
         .catch(err => {
             res.json(err)
