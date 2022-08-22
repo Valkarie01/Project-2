@@ -1,0 +1,22 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+    <div class="container-md">
+        <h1>Genre: {{genre.genre}}</h1>
+
+        {% for artist in artists %}
+
+        <ul>
+            <li>{{artist.name}}</li>
+        </ul>
+        {% endfor %}
+        <article>
+            <div class="btn-group">
+                <a href="/{{genre._id}}/edit" class="btn btn-primary">Edit Genre</a>
+                <form action="/{{genre._id}}?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+            </div>
+        </article>
+    </div>
+{% endblock %}

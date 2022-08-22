@@ -1,0 +1,23 @@
+{% layout 'layout.liquid' %}
+
+{% block content %}
+<div class="container-md">
+    <form action="/" method="POST">
+        <fieldset>
+            <legend>Create A New Genre</legend>
+            <label class="form-label">Genre:</label>
+            <input 
+                class="form-control" 
+                type="text" 
+                name="genre" 
+                placeholder="Enter Genre"
+            >
+        </fieldset>
+        <input 
+            type="submit" 
+            value="Create New Genre" 
+            class="btn btn-success"
+        >
+    </form>
+</div>
+{% endblock %}

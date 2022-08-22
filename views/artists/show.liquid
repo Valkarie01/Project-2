@@ -1,5 +1,11 @@
 {% layout 'layout.liquid' %}
 
 {% block content %}
-<h2>{{Artist.name}}</h2>
+{% for artist in artists %}
+<h2>{{artist.name}}</h2>
+<h2>{{artist.albums}}</h2>
+<h2>{{artist.genre}}</h2>
+<h2>{{artist.fave}}</h2>
+        
+{% endfor %}
 {% endblock %}

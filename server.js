@@ -1,4 +1,4 @@
-// === Dependencies ====
+// ==== Dependencies ====
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
@@ -8,7 +8,7 @@ const userRoutes = require('./controller/user_routes')
 const genreRoutes = require('./controller/genre_routes')
 const app = require('liquid-express-views')(express())
 
-// == Middleware ===
+// === Middleware ===
 
 app.use(morgan('tiny'))
 app.use(methodOverride('_method'))
