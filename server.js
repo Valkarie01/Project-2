@@ -6,6 +6,7 @@ const methodOverride = require('method-override')
 const artistRoutes = require('./controller/artist_routes')
 const userRoutes = require('./controller/user_routes')
 const genreRoutes = require('./controller/genre_routes')
+const commentRoutes = require('./controller/comment_routes')
 const app = require('liquid-express-views')(express())
 
 // === Middleware ===
@@ -32,6 +33,7 @@ app.use(
 
 app.use('/artist', artistRoutes)
 app.use('/users', userRoutes)
+app.use('/comments', commentRoutes)
 app.use('/', genreRoutes)
 
 // ======= PORT ========

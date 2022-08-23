@@ -10,7 +10,7 @@
             <li>{{artist.name}}</li>
         </ul>
         
-        {% endfor %}
+        {% endfor %}  
         <article>
             <div class="btn-group">
                 <a href="/{{genre._id}}/edit" class="btn btn-primary">Edit Genre</a>
@@ -19,5 +19,33 @@
                 </form>
             </div>
         </article>
+        <div class="col-md-6">
+            <form action="/comments/{{genre._id}}" method="POST">
+                <fieldset> 
+                    <legend>Add Comment</legend>
+                    <label class="form-label">Comment: </label>
+                    <input 
+                    type="text" 
+                    class="from-control" 
+                    name="note" 
+                    placeholder="Enter Comment Here"
+                    >
+                </fieldset>
+                <input 
+                type="submit" 
+                class="btn btn-success" 
+                value="Add Comment"
+                >
+            </form>
+        </div>
+        {% if genre.comments.length > 0 %}
+        <div class="container-sm justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                {% for comment in genre.comments %}
+                {% render '../comment.liquid' comment: comment, userId: userId, genre: genre username: username %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
     </div>
 {% endblock %}

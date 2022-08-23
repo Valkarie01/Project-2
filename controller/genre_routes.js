@@ -14,7 +14,7 @@ router.delete('/:id', (req, res) => {
         .catch(err => {
             res.json(err)
         })
-    })
+})
 
 router.get('/:id/edit', (req, res) => {
     const genreId = req.params.id
@@ -40,7 +40,6 @@ router.put('/:id', (req, res) => {
             res.json(err)
         })
 })
-
 
 // INDEX 
 router.get('/', (req, res) => {
@@ -81,6 +80,9 @@ router.get('/:id', (req, res) => {
     const genreId = req.params.id
 
     Genre.findById(genreId)
+
+    .populate('comments.author')
+    
         .then(genre => {
             res.render('genres/show', { genre })
         })
